@@ -12,7 +12,6 @@ from users.serializers import UserSerializer, PaymentSerializer, UserRegistratio
 from users.services import create_product, create_price
 
 
-# Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
