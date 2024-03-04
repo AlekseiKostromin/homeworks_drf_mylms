@@ -12,6 +12,7 @@ from users.serializers import UserSerializer, PaymentSerializer, UserRegistratio
 from users.services import create_product, create_price
 
 
+# Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -76,6 +77,13 @@ class PaymentCreateAPIView(APIView):
             # Если возникла ошибка при создании сессии, возвращаем соответствующий ответ
             return Response({'error': 'Failed to create checkout session'}, status=status.HTTP_400_BAD_REQUEST)
 
+
+#{
+#     "user": 1,
+#     "payment_date": "2024-02-25",
+#     "amount": 50.00,
+#     "payment_method": "cash"
+# }
 
 class PaymentStatusAPIView(APIView):
     def get(self, request, pk, format=None):
