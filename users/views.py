@@ -78,13 +78,6 @@ class PaymentCreateAPIView(APIView):
             return Response({'error': 'Failed to create checkout session'}, status=status.HTTP_400_BAD_REQUEST)
 
 
-#{
-#     "user": 1,
-#     "payment_date": "2024-02-25",
-#     "amount": 50.00,
-#     "payment_method": "cash"
-# }
-
 class PaymentStatusAPIView(APIView):
     def get(self, request, pk, format=None):
         # Получаем запись о платеже по его идентификатору
@@ -92,6 +85,5 @@ class PaymentStatusAPIView(APIView):
 
         # Получаем данные о статусе платежа из Stripe
         # В этом месте мы можем добавить логику для проверки статуса платежа в Stripe
-
         # Возвращаем данные о статусе платежа в ответе
         return Response({'status': 'Payment status goes here'}, status=status.HTTP_200_OK)

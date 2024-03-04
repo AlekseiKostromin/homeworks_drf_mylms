@@ -3,7 +3,6 @@ from rest_framework.generics import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-
 from users.permissions import IsOwner, IsModerator, IsNotModerator
 from .models import Course, Lesson, Subscription
 from .paginators import MyPagination
@@ -12,7 +11,6 @@ from mylms.tasks import send_course_update_email
 
 
 # Представления для курсов
-
 class CoursesViewSet(viewsets.ModelViewSet):
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
@@ -136,26 +134,4 @@ class SubscriptionAPIView(APIView):
         # Возвращаем ответ в API
         return Response({"message": message})
 
-# class CourseListCreateAPIView(generics.ListCreateAPIView):
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
-#
-#
-# class CourseRetrieveAPIView(generics.RetrieveAPIView):
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
-#
-#
-# class CourseCreateAPIView(generics.CreateAPIView):
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
-#
-#
-# class CourseUpdateAPIView(generics.UpdateAPIView):
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
-#
-#
-# class CourseDestroyAPIView(generics.DestroyAPIView):
-#     queryset = Course.objects.all()
-#     serializer_class = CourseSerializer
+

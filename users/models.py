@@ -15,7 +15,7 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
 
-from courses.models import Course, Lesson #Ошибка скорее всего связана с импортом из courses.models, который ссылается на модели курсов и уроков до их объявления.
+from courses.models import Course, Lesson
 
 
 class Payment(models.Model):

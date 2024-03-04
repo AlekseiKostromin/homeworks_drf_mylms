@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
 
     'users',
     'courses',
@@ -52,7 +53,6 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     'corsheaders',
-    'drf_yasg',
 
     'django_celery_beat',
 ]
@@ -186,3 +186,8 @@ CELERY_TASK_TRACK_STARTED = True
 
 # ћаксимальное врем€ на выполнение задачи
 CELERY_TASK_TIME_LIMIT = 30 * 60
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=5),
+}

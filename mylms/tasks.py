@@ -1,10 +1,8 @@
 from datetime import timedelta
-
 from celery import shared_task
 from django.core.mail import send_mail
 from django.utils import timezone
 from django.contrib.auth import get_user_model
-
 from courses.models import Course, Subscription
 
 
