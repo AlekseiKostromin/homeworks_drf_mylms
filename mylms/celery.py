@@ -18,7 +18,7 @@ app.autodiscover_tasks()
 # Настройка расписания для celery-beat
 app.conf.beat_schedule = {
     'block-inactive-users-every-month': {
-        'task': 'mylms.tasks.send_course_update_email.block_inactive_users',
+        'task': 'mylms.tasks.block_inactive_users',
         'schedule': timezone.timedelta(days=1),  # Запускать каждый день
     },
 }
